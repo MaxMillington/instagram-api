@@ -1,0 +1,1 @@
+The goal of this project was to build a basic instagram clone with the purpose of teaching myself OAuth and how to use the instagram API.
