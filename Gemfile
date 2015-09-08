@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'foundation-rails'
 gem 'omniauth-instagram'
 gem 'httparty'
 
