@@ -1,0 +1,63 @@
+<nav class="top-bar" data-topbar>
+  <section class="top-bar-section">
+    <ul class="center-buttons">
+      <li> <%= link_to 'InstantGram', dashboard_feed_path, id:"instantgram" %></li>
+      <li> <%= link_to 'My feed', dashboard_feed_path %></li>
+      <li> <%= link_to 'Log out', logout_path, method: :delete %></li>
+    </ul>
+  </section>
+</nav>
+<br>
+<div class="row bump">
+  <div class="small-12 large-12 columns">
+    <div class="row">
+      <div class="profile-card">
+        <div class="small-6 large-4 columns">
+          <%= image_tag current_user.image_url %>
+        </div>
+        <div class="small-12 large-8 columns">
+          <h3><%= current_user.nickname %>&nbsp; <span id='wtf'> <%= link_to 'EDIT PROFILE', "https://instagram.com/accounts/edit/" %></span></h3></div>
+        <div class="small-12 large-8 columns">
+          <p><%= current_user.client.user.bio %></p>
+          <p id="blue-site"><%= current_user.website %></p>
+          <% if current_user.client_user.bio.empty? %>
+              <br>
+          <% end %>
+        </div>
+        <div class="small-12 large-8 columns">
+          <span id="profile-data"><strong> <%= current_user.client_user.counts.media %></strong> posts</span>
+          <span id="profile-data"><strong> <%= current_user.client_user.counts.followed_by %></strong> followers</span>
+          <span id="profile-data"><strong> <%= current_user.client_user.counts.follows %></strong> following</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <% current_user.posts.each do |feed_item| %>
+      <div class="small-4 columns">
+        <div class="item-wrapper">
+          <div class="img-wrapper">
+            <div id="overlay"><span id="plus"></span><a href="" data-reveal-id="<%= "item-" + feed_item.caption.id %>"><%= image_tag feed_item.images.low_resolution.url %></a></div>
+            <div id="<%= "item-" + feed_item.caption.id %>" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+              <div class="large-8 columns">
+                <%= image_tag feed_item.images.standard_resolution.url
+                %><br>
+              </div>
+              <div class="large-4 columns">
+                <%= image_tag feed_item.user.profile_picture, height:'60', width:'60', class:"profile-pic-medium" %>
+                <h6 id="username_big"><%= feed_item.caption.from.username%></h6>
+                <p id="likes"><%= feed_item.likes["count"] %> likes</p>
+                <% feed_item.comments.data.each do |comment| %>
+                    <strong id="username"><%= comment.from.username %></strong>  <%= comment.text %><br>
+                <% end %>
+              </div>
+              <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+  <% end %>
+</div>
