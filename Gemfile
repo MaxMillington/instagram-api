@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~>3.3.5'
 gem 'bootswatch-sass'
 gem 'bootstrap3-rails'
 gem 'bootstrap_form'
+gem 'paperclip'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
