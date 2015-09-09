@@ -9,10 +9,25 @@ body {
     height: 77%;
 }
 
+#title {
+    position: absolute;
+    top: 250px;
+    color: white;
+    text-shadow: 2px 2px #000000;
+    left: 650px;
+    z-index: 1;
+}
+
+body {
+    background-color: #BBBBBB;
+}
+
 .item,
 .active,
 .carousel-inner {
+    position: relative;
     height: 100%;
+    z-index: 0;
 }
 
 /* Background images are set within the HTML using inline CSS, not here */
@@ -20,11 +35,13 @@ body {
 .fill {
     width: 100%;
     height: 100%;
+    position: relative;
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    z-index: 0;
 }
 
 footer {
