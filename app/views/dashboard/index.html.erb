@@ -1,44 +1,53 @@
 <%= render 'layouts/navigation' %>
 <div class="row">
-  <% current_user.feed.each do |feed_item| %>
-      <div class="large-4 columns">
-        <div class="card">
-          <% if feed_item.caption %>
-              <span class="title"><%= image_tag current_user.image_url,
-                                                class: 'avatar', height:'30',
-                                                width:'30',
-                                                class:"profile-pic-small" %>&nbsp;<%= link_to current_user.nickname, dashboard_path(feed_item.user.id) %></span>
-              <div class="image">
-                <a href="" data-reveal-id="<%= feed_item.caption.id %>"><%= image_tag feed_item.images.low_resolution.url %></a>
-                <div id="<%= feed_item.caption.id %>" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-                  <div class="large-8 columns">
-                    <%= feed_item.images.standard_resolution.url %><br>
-                  </div>
-                  <div class="large-4 columns">
-                    <%= image_tag feed_item.user.profile_picture, height:'60', width:'60', class:"profile-pic-medium" %>
-                    <h6 id="username_big"><%= feed_item.caption.from.username %></h6>
-                    <p id="likes"><%= feed_item.likes["count"] %> likes</p>
-                    <% feed_item.comments.data.each do |comment| %>
-                        <strong id="username"><%= comment.from.username %></strong>  <%= comment.text %><br>
-                    <% end %>
-                  </div>
-                  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-                </div>
-              </div>
-              <div class="content">
-                <p id="likes"><strong><%= feed_item.likes["count"] %> likes</strong></p>
-                <p><strong id="username"><%= feed_item.caption.from.username %></strong>  <%= truncate(feed_item.caption.text, length: 250, omission: '...(continued)') %></p>
-                <% if feed_item.caption.text.length < 250 %>
-                    <% feed_item.comments.data.first(2).each do |comment| %>
-                        <p><strong id="username"><%= comment.from.username %></strong>  <%= comment.text %> <% end %> </p>
-                <% end %>
-              </div>
-          <% end %>
-          <div class="action">
-            <%= image_tag '2764.png', height:'20', width: '20'%> Add a comment...
+  <br>
+  <br>
+
+  <div class="col-sm-6 col-sm-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-sm-2">
+            <% current_user.feed.each do |feed_item| %>
+          </div>
+          <div class="col-sm-8">
+            <p class="text-left"><%= current_user.name %></p>
+          </div>
+          <div class="col-sm-2">
           </div>
         </div>
-        <br>
       </div>
-  <% end %>
+      <div class="panel-body">
+        <a href="" data-reveal-id="<%= feed_item.caption.id %>">
+          <%= image_tag feed_item.images.standard_resolution.url %></a>
+      </div>
+      <div class="panel-footer">
+        <h6 id="username_big"><%= feed_item.caption.from.username %></h6>
+        <hr>
+        <div class="row">
+          <div class="col-sm-1" id="heart">
+            <i class="fa fa-heart-o fa-lg"></i>
+            <p id="likes"><%= feed_item.likes["count"] %> likes</p>
+          </div>
+          <div class="col-sm-9" id="comment">
+            <input type="text" class="form-control" placeholder="Comment ...">
+            <% feed_item.comments.data.each do |comment| %>
+                <strong id="username"><%= comment.from.username %></strong>  <%= comment.text %><br>
+            <% end %>
+          </div>
+          <div class="col-sm-2">
+            <div class="dots">
+              <span>&#x25cb;</span><span>&#x25cb;</span><span>&#x25cb;</span>
+            </div>
+                <br>
+            <% end %>
+          </div>
+            <br>
+        </div>
+            <br>
+      </div>
+            <br>
+    </div>
+    <br>
+  </div>
 </div>
