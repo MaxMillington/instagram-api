@@ -14,6 +14,7 @@ gem 'bootswatch-sass'
 gem 'bootstrap3-rails'
 gem 'bootstrap_form'
 gem 'paperclip'
+gem 'foundation'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
