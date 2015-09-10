@@ -23,9 +23,15 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="#">Login</a>
-        </li>
+        <% if current_user %>
+            <li>
+              <%= link_to "Logout", logout_path %>
+            </li>
+        <% else %>
+            <li>
+              <a href="#">Login</a>
+            </li>
+        <% end %>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
