@@ -11,4 +11,13 @@ class DashboardController < ApplicationController
 
   end
 
+  def search
+    tags = profile_client
+    if tags[0].nil?
+      @posts = profile_client.user_recent_media
+    else
+      @posts = profile_client.tag_recent_media(tag[0].name)
+    end
+  end
+
 end

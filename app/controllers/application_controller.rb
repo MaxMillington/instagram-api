@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def profile_client
-    Instag  ram.client(access_token: current_user.token)
+    Instagram.client(access_token: current_user.token)
   end
 
   def authorize!
