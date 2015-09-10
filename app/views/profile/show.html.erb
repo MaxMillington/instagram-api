@@ -31,9 +31,9 @@
   </div>
   <br>
   <div class="row">
-    <% current_user.client.user_recent_media.each do |media_item| %>
-        <div class="col-sm-4">
-          <%= image_tag media_item.images.standard_resolution.url, class: "img-responsive",
+    <% @posts.each do |item| %>
+        <div class="col-sm-4 profile-images">
+          <%= image_tag item.images.standard_resolution.url, class: "img-responsive",
                         alt: "#{current_user.name} image" %>
         </div>
     <% end %>

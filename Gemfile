@@ -14,7 +14,6 @@ gem 'bootswatch-sass'
 gem 'bootstrap3-rails'
 gem 'bootstrap_form'
 gem 'will_paginate', '~> 3.0.5'
-gem 'betterlorem', '~> 0.1.2'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 # Use jquery as the JavaScript library

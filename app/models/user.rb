@@ -32,11 +32,11 @@ class User < ActiveRecord::Base
   end
 
   def profile_posts(id)
-    client.user_recent_media(id).first(18)
+    client.user_recent_media(id).first(21)
   end
 
   def posts
-    client.user_recent_media.first(18)
+    client.user_recent_media.first(21)
   end
 
 end
