@@ -7,13 +7,12 @@
       <%= image_tag current_user.image_url, class: "img-responsive img-circle",
                     alt: "#{current_user.name} image" %>
     </div>
-    <!-- #<Hashie::Mash bio="" counts=#<Hashie::Mash followed_by=26 follows=15 media=5> full_name="Mike Dorrance" id="251122079" profile_picture="http://photos-c.ak.instagram.com/hphotos-ak-xaf1/t51.2885-19/11324440_693505440782570_2062752577_a.jpg" username="heshekids" website="">
-    (byebug) -->
 
     <div class="profile col-sm-6">
       <div class="clearfix">
         <h2 class="pull-left"><%= current_user.nickname %></h2>
-        <%= link_to "Edit Profile", "https://instagram.com/accounts/edit/", class: 'btn btn-sm btn-default pull-right' %>
+        <%= link_to "Edit Profile", "https://instagram.com/accounts/edit/",
+                    class: 'btn btn-sm btn-default pull-right' %>
       </div>
       <h5> <%= current_user.name %> </h5>
       <div class="stats">
@@ -33,20 +32,20 @@
   <div class="row">
     <% @posts.each do |item| %>
         <div id="overlay" class="col-sm-4 profile-images portfolio-item">
-          <a href="#portfolioModal#<%= item.id %>" class="portfolio-link" data-toggle="modal">
+          <a href="#portfolioModal<%= item.id %>" class="portfolio-link" data-toggle="modal">
             <div class="caption">
               <div class="caption-content">
                 <i class="fa fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <%= image_tag item.images.standard_resolution.url, class: "img-responsive",
+            <%= image_tag item.images.standard_resolution.url, class: "img-responsive hvr-grow",
                           alt: "#{current_user.name} image" %>
           </a>
         </div>
         <div id="<%= "item-" + item.caption.id %>"
              class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
           <!-- Portfolio Modals -->
-          <div class="portfolio-modal modal fade" id="portfolioModal#<%= item.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="portfolio-modal modal fade" id="portfolioModal<%= item.id %>" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-content">
               <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -58,14 +57,13 @@
                 <div class="row">
                   <div class="col-lg-8 col-lg-offset-2">
                     <div class="modal-body">
-                      <h2>Meal Finder</h2>
                       <hr class="star-primary">
-                      <img src="<%= item.images.standard_resolution.url %><br> %>" class="img-responsive img-centered" alt="">
+                      <img src="<%= item.images.standard_resolution.url %>" class="img-responsive img-centered" alt="">
                       <div class="large-4 columns">
-                        <%= image_tag profile_picture(feed_item), height:'60', width:'60', class:"profile-pic-medium" %>
-                        <h6 id="username_big"><%= username(feed_item) %></h6>
-                        <p id="likes"><%= likes(feed_item) %> likes</p>
-                        <% feed_item.comments.data.each do |comment| %>
+                        <%= image_tag item.user.profile_picture, height:'60', width:'60', class:"profile-pic-medium" %>
+                        <h6 id="username_big"><%= item.caption.from.username %></h6>
+                        <p id="likes"><%= item.likes["count"] %> likes</p>
+                        <% item.comments.data.each do |comment| %>
                             <strong id="username"><%= comment.from.username %></strong>  <%= comment.text %><br>
                         <% end %>
                       </div>
