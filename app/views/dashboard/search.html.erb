@@ -1,0 +1,48 @@
+<%= render 'layouts/navigation' %>
+<div class="row">
+  <br>
+  <br>
+
+  <div class="col-sm-6 col-sm-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-sm-2">
+            <% @posts.each do |feed_item| %>
+                </div>
+                <div class="col-sm-8">
+                  <p class="text-left"><%= current_user.name %></p>
+                </div>
+                <div class="col-sm-2">
+                </div>
+                </div>
+                </div>
+                <div class="panel-body">
+                  <h6 id="username_big"><%= feed_item.caption.from.username %></h6>
+                  <hr>
+                  <a href="" data-reveal-id="<%= feed_item.caption.id %>">
+                    <%= image_tag feed_item.images.standard_resolution.url %></a>
+                </div>
+                <div class="panel-footer">
+                  <div class="row">
+                    <div class="col-sm-1" id="heart">
+                      <i class="fa fa-heart-o fa-lg"></i>
+                      <p id="likes"><%= feed_item.likes["count"] %> likes</p>
+                    </div>
+                    <div class="col-sm-9" id="comment">
+                      <input type="text" class="form-control" placeholder="Comment ...">
+                      <% feed_item.comments.data.each do |comment| %>
+                          <strong id="username"><%= comment.from.username %></strong>  <%= comment.text %><br>
+                      <% end %>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="dots">
+                        <span>&#x25cb;</span><span>&#x25cb;</span><span>&#x25cb;</span>
+                      </div>
+            <% end %>
+            </div>
+            </div>
+            </div>
+            </div>
+  </div>
+</div>

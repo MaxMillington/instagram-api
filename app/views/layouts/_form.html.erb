@@ -1,0 +1,6 @@
+<%= form_tag("/search", method: :post, id:"searchForm",
+             class:"menu-search-form") do %>
+    <%= label_tag "" %>
+    <%= text_field_tag "search" %>
+    <%= submit_tag "", class: 'btn menu-search-submit' %>
+<% end %>

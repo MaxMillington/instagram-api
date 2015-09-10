@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+
   def index
   end
 
@@ -12,11 +13,11 @@ class DashboardController < ApplicationController
   end
 
   def search
-    tags = profile_client
+    tags = current_client.tag_search(params[:search])
     if tags[0].nil?
-      @posts = profile_client.user_recent_media
+      redirect_to profile_path
     else
-      @posts = profile_client.tag_recent_media(tag[0].name)
+      @posts = current_client.tag_recent_media(tags[0].name)
     end
   end
 

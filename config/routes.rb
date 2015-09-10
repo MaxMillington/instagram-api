@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get  '/dashboard', to: 'dashboard#show'
   get 'dashboard/feed', to: 'dashboard#index'
   get 'dashboard/trending', to: 'dashboard#trending'
+  post '/search', to: "dashboard#search"
   get '/profile', to: 'profile#show'
   root 'home#show'
   get "home/index", to: "home#index"

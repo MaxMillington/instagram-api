@@ -1,0 +1,7 @@
+$('#my-posts').append('<%= j render @profile %>');
+<% if @profile.next_page %>
+$('.pagination').replaceWith('<%= j will_paginate @profile %>');
+<% else %>
+$(window).off('scroll');
+$('.pagination').remove();
+<% end %>
