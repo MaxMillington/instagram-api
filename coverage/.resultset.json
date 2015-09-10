@@ -1,0 +1,176 @@
+{
+  "MiniTest": {
+    "coverage": {
+      "/Users/maryrose/module_3_projects/instagram-api/config/environment.rb": [
+        null,
+        1,
+        null,
+        null,
+        1
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/environments/test.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/initializers/assets.rb": [
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/initializers/backtrace_silencers.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/initializers/cookies_serializer.rb": [
+        null,
+        null,
+        1
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/initializers/inflections.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/initializers/instagram.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/initializers/mime_types.rb": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/initializers/omniauth.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/initializers/session_store.rb": [
+        null,
+        null,
+        1
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/initializers/wrap_parameters.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/config/routes.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/test/models/user_test.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1441845563
+  }
+}
