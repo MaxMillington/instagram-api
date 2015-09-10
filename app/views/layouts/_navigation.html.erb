@@ -24,12 +24,14 @@
 
       <ul class="nav navbar-nav">
         <li class="'menu-search">
+          <div class="form-group">
           <%= form_tag(search_path, method: :post, id:"searchForm", class:"form-control") do %>
               <%= label_tag "" %>
               <%= text_field_tag "search", nil, placeholder: 'Search Tags' %>
               <%= submit_tag "", class: 'hidden btn menu-search-submit' %>
           <% end %>
           <!--<input type="text" class="form-control" placeholder="Search Doesn't Work">-->
+          </div>
         </li>
       </ul>
 
