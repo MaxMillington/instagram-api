@@ -115,13 +115,83 @@
     "coverage": {
       "/Users/maryrose/module_3_projects/instagram-api/app/helpers/application_helper.rb": [
         1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
         null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/app/controllers/sessions_controller.rb": [
+        1,
+        null,
+        1,
+        5,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/maryrose/module_3_projects/instagram-api/spec/features/user_can_login_logout_spec.rb": [
+
       ],
       "/Users/maryrose/module_3_projects/instagram-api/app/models/user.rb": [
         1,
         null,
         1,
-        0,
+        5,
         null,
         null,
         0,
@@ -162,6 +232,6 @@
         null
       ]
     },
-    "timestamp": 1441913554
+    "timestamp": 1441926649
   }
 }

@@ -44,6 +44,7 @@
         </div>
         <div id="<%= "item-" + item.caption.id %>"
              class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+
           <!-- Portfolio Modals -->
           <div class="portfolio-modal modal fade" id="portfolioModal<%= item.id %>" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-content">
@@ -60,8 +61,12 @@
                       <hr class="star-primary">
                       <img src="<%= item.images.standard_resolution.url %>" class="img-responsive img-centered" alt="">
                       <div class="large-4 columns">
+                        <div class="modal-profile-pic">
                         <%= image_tag item.user.profile_picture, height:'60', width:'60', class:"profile-pic-medium" %>
-                        <h6 id="username_big"><%= item.caption.from.username %></h6>
+                        <p><%= item.caption.text %></p>
+                          <h6 id="username_big"><%= item.caption.from.username %></h6>
+                        </div>
+
                         <p id="likes"><%= item.likes["count"] %> likes</p>
                         <% item.comments.data.each do |comment| %>
                             <strong id="username"><%= comment.from.username %></strong>  <%= comment.text %><br>
