@@ -41,16 +41,18 @@ GEM
       execjs
       json
     awesome_print (1.6.1)
-    bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    betterlorem (0.1.2)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    bootstrap-will_paginate (0.0.10)
+      will_paginate
     bootstrap3-rails (3.2.0)
       rails (>= 4.0.0)
     bootstrap_form (2.3.0)
@@ -59,10 +61,6 @@ GEM
       sass-rails (~> 5.0)
     builder (3.2.2)
     byebug (6.0.2)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
-    cocaine (0.5.7)
-      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -81,8 +79,6 @@ GEM
       faraday (>= 0.7.4, < 0.10)
     figaro (1.1.1)
       thor (~> 0.14)
-    foundation (1.0.4)
-      thor (>= 0.18.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.2)
@@ -110,7 +106,6 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.6.1)
-    mimemagic (0.3.0)
     mini_portile (0.6.2)
     minitest (5.8.0)
     multi_json (1.11.2)
@@ -133,12 +128,6 @@ GEM
     omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    paperclip (4.3.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      cocaine (~> 0.5.5)
-      mime-types
-      mimemagic (= 0.3.0)
     pg (0.18.3)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -215,29 +204,29 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   awesome_print
-  bcrypt (~> 3.1.7)
   better_errors
+  betterlorem (~> 0.1.2)
   binding_of_caller
   bootstrap-sass (~> 3.3.5)
+  bootstrap-will_paginate (~> 0.0.10)
   bootstrap3-rails
   bootstrap_form
   bootswatch-sass
   byebug
   coffee-rails (~> 4.1.0)
   figaro
-  foundation
   httparty
   instagram
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-instagram
-  paperclip
   pg
   pry
   rails (= 4.2.3)
@@ -248,6 +237,7 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  will_paginate (~> 3.0.5)
 
 BUNDLED WITH
    1.10.3

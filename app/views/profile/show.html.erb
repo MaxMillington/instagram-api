@@ -1,59 +1,41 @@
 <br>
 <br>
 <br>
-<div class="row bump">
-  <div class="small-12 large-12 columns">
-    <div class="row">
-      <div class="profile-card">
-        <div class="small-6 large-4 columns">
-          <%= image_tag current_user.image_url, class: 'avatar' %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 col-sm-offset-1">
+      <%= image_tag current_user.image_url, class: "img-responsive img-circle",
+                    alt: "#{current_user.name} image" %>
+    </div>
+    <!-- #<Hashie::Mash bio="" counts=#<Hashie::Mash followed_by=26 follows=15 media=5> full_name="Mike Dorrance" id="251122079" profile_picture="http://photos-c.ak.instagram.com/hphotos-ak-xaf1/t51.2885-19/11324440_693505440782570_2062752577_a.jpg" username="heshekids" website="">
+    (byebug) -->
+
+    <div class="profile col-sm-6">
+      <div class="clearfix">
+        <h2 class="pull-left"><%= current_user.nickname %></h2>
+        <%= link_to "Edit Profile", "https://instagram.com/accounts/edit/", class: 'btn btn-sm btn-default pull-right' %>
+      </div>
+      <h5> <%= current_user.name %> </h5>
+      <div class="stats">
+        <div class="col-sm-4">
+          <p class="text-left"><strong><%= current_user.client.user.counts.media %></strong> posts</p>
         </div>
-        <div class="small-12 large-8 columns">
-          <h3><%= current_user.nickname %>&nbsp; <span id='profile-info'>
-            <%= link_to 'EDIT PROFILE', "https://instagram.com/accounts/edit/" %></span></h3></div>
-        <div class="small-12 large-8 columns">
-          <p><%= current_user.client.user.bio %></p>
-          <p id="blue-site"><%= current_user.website %></p>
-          <% if current_user.client_user.bio.empty? %>
-              <br>
-          <% end %>
+        <div class="col-sm-4">
+          <p class="text-left"><strong><%= current_user.client.user.counts.followed_by %></strong> followers</p>
         </div>
-        <div class="small-12 large-8 columns">
-          <span id="profile-data"><strong> <%= current_user.client_user.counts.media %></strong> posts</span>
-          <span id="profile-data"><strong> <%= current_user.client_user.counts.followed_by %></strong> followers</span>
-          <span id="profile-data"><strong> <%= current_user.client_user.counts.follows %></strong> following</span>
+        <div class="col-sm-4">
+          <p class="text-left"><strong><%= current_user.client.user.counts.follows %></strong> following</p>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="row">
-  <% current_user.posts.each do |feed_item| %>
-      <div class="small-4 columns">
-        <div class="item-wrapper">
-          <div class="img-wrapper">
-            <div id="overlay"><span id="plus"></span><a href="" data-reveal-id="<%= "item-" + feed_item.caption.id %>">
-              <%= image_tag feed_item.images.low_resolution.url %></a></div>
-            <div id="<%= "item-" + feed_item.caption.id %>" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-              <div class="large-8 columns">
-                <%= image_tag feed_item.images.standard_resolution.url
-                %><br>
-              </div>
-              <div class="large-4 columns">
-                <%= image_tag feed_item.user.profile_picture, height:'60', width:'60', class:"profile-pic-medium" %>
-                <h6 id="username_big"><%= feed_item.caption.from.username%></h6>
-                <p id="likes"><%= feed_item.likes["count"] %> likes</p>
-                <% feed_item.comments.data.each do |comment| %>
-                    <strong id="username"><%= comment.from.username %></strong>
-                    <%= comment.text %><br>
-                <% end %>
-              </div>
-              <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-            </div>
-          </div>
-          <br>
+  <br>
+  <div class="row">
+    <% current_user.client.user_recent_media.each do |media_item| %>
+        <div class="col-sm-4">
+          <%= image_tag media_item.images.standard_resolution.url, class: "img-responsive",
+                        alt: "#{current_user.name} image" %>
         </div>
-      </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
