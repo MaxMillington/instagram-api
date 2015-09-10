@@ -30,7 +30,7 @@
   </div>
   <br>
   <div class="row">
-    <% @posts.each do |item| %>
+    <% @profile.each do |item| %>
         <div id="overlay" class="col-sm-4 profile-images portfolio-item">
           <a href="#portfolioModal<%= item.id %>" class="portfolio-link" data-toggle="modal">
             <div class="caption">
@@ -75,6 +75,9 @@
             </div>
           </div>
     <% end %>
+    </div>
+    <div id="infinite-scrolling">
+      <%= will_paginate %>
     </div>
   </div>
 </div>

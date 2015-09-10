@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
     arel (6.0.3)
     autoprefixer-rails (6.0.2)
       execjs
@@ -59,7 +60,12 @@ GEM
       rails (>= 4.2.0)
       sass-rails (~> 5.0)
     builder (3.2.2)
-    byebug (6.0.2)
+    capybara (2.4.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -68,6 +74,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     debug_inspector (0.0.2)
     docile (1.1.5)
     erubis (2.7.0)
@@ -165,7 +173,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
-    rdoc (4.2.0)
+    safe_yaml (1.0.4)
     sass (3.4.18)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -173,9 +181,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sdoc (0.4.1)
-      json (~> 1.7, >= 1.7.7)
-      rdoc (~> 4.0)
     simplecov (0.10.0)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -198,12 +203,13 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    web-console (2.2.1)
-      activemodel (>= 4.0)
-      binding_of_caller (>= 0.7.2)
-      railties (>= 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
+    vcr (2.9.3)
+    webmock (1.21.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
     will_paginate (3.0.7)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -217,7 +223,7 @@ DEPENDENCIES
   bootstrap3-rails
   bootstrap_form
   bootswatch-sass
-  byebug
+  capybara
   coffee-rails (~> 4.1.0)
   figaro
   httparty
@@ -230,11 +236,11 @@ DEPENDENCIES
   rails (= 4.2.3)
   rails_12factor
   sass-rails (~> 5.0)
-  sdoc (~> 0.4.0)
   simplecov
   turbolinks
   uglifier (>= 1.3.0)
-  web-console (~> 2.0)
+  vcr
+  webmock
   will_paginate (~> 3.0.5)
 
 BUNDLED WITH
