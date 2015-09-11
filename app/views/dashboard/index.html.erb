@@ -26,8 +26,8 @@
             </a>
           </div>
           <div class="panel-footer">
-            <% if feed.likes.count > 4 %>
-                <p> <%= feed.likes.count %> likes</p>
+            <% if feed.likes["count"] > 4 %>
+                <p> <%= feed.likes["count"] %> likes</p>
             <% else %>
                 <% feed.likes.data.each do |username| %>
                     <%= link_to username.username, "https://instagram.com/#{username.username}" %>
@@ -38,6 +38,9 @@
 
             <p> <%= render_text(feed) %> </p>
             <hr>
+            <p><% render_comments(feed).each do |comment| %>
+                  <%= link_to comment.from.username, "https://instagram.com/#{comment.from.username}" %>: <%= comment.text %></p>
+                  <% end %>
             <div class="row">
               <div class="col-sm-1" id="heart">
                 <i class="fa fa-heart-o fa-lg"></i>

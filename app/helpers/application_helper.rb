@@ -10,4 +10,8 @@ module ApplicationHelper
   def render_text(feed)
     feed.caption.text if feed.caption
   end
+
+  def render_comments(feed)
+    feed.comments.data if feed.comments
+  end
 end

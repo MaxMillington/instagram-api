@@ -158,10 +158,6 @@
         22,
         null,
         null,
-        1,
-        0,
-        null,
-        null,
         null
       ],
       "/Users/maryrose/module_3_projects/instagram-api/app/controllers/sessions_controller.rb": [
@@ -243,6 +239,6 @@
         null
       ]
     },
-    "timestamp": 1441990644
+    "timestamp": 1441993756
   }
 }
