@@ -29,6 +29,8 @@ group :development, :test do
   gem 'vcr'
   gem 'simplecov', :require => false
   gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :development do
