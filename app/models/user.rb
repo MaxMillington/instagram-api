@@ -19,24 +19,8 @@ class User < ActiveRecord::Base
     @client = Instagram.client(access_token: token)
   end
 
-  def next_url
-    client.user_media_feed.pagination.next_url
-  end
-
   def client_user
     client.user
-  end
-
-  def feed
-    client.user_media_feed.first(18)
-  end
-
-  def profile_posts(id)
-    client.user_recent_media(id).first(21)
-  end
-
-  def posts
-    client.user_recent_media.first(21)
   end
 
 end

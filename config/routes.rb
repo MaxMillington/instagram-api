@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   get '/search', to: "dashboard#search"
   get '/profile', to: 'profile#show'
   root 'home#show'
-  get "home/index", to: "home#index"
 end

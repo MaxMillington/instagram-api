@@ -15,6 +15,10 @@ RSpec.describe "User can search stuff", type: :feature do
         fill_in "search", with: ("monkey")
         click_link_or_button("search-tags")
         expect(current_path).to eq(search_path)
+
+        fill_in "search", with: ("")
+        click_link_or_button("search-tags")
+        expect(current_path).to eq(profile_path)
       end
     end
 
