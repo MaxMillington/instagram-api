@@ -17,10 +17,10 @@
       <% if current_user %>
           <a id="my-profile" class="navbar-brand navbar-left" href="<%= profile_path if current_user%>">My Profile</a>
       <% end %>
-      <div class="navbar-form navbar-left">
+      <div id="tag-search" class="navbar-form navbar-left">
         <%= render partial: 'layouts/form' %>
       </div>
-      <div class="navbar-form navbar-left">
+      <div id="user-search" class="navbar-form navbar-left">
         <%= render partial: 'layouts/user_form' %>
       </div>
     </div>
