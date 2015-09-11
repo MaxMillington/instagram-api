@@ -126,6 +126,10 @@
         1,
         133,
         null,
+        null,
+        1,
+        133,
+        null,
         null
       ],
       "/Users/maryrose/module_3_projects/instagram-api/app/controllers/home_controller.rb": [
@@ -195,6 +199,14 @@
         1,
         null,
         null,
+        1,
+        2,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
         null,
         1,
         2,
@@ -202,24 +214,6 @@
         null,
         1,
         1,
-        0,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        2,
-        1,
-        null,
-        1,
-        1,
-        0,
-        null,
-        1,
-        null,
-        null,
         null,
         null,
         null
@@ -239,6 +233,6 @@
         null
       ]
     },
-    "timestamp": 1441993756
+    "timestamp": 1441996415
   }
 }
