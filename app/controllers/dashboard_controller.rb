@@ -3,10 +3,10 @@ class DashboardController < ApplicationController
   def index
   end
 
-  def show
-    @id = params[:id]
-    @profile_client = Instagram.client(access_token: current_user.token)
-  end
+  # def show
+  #   @id = params[:id]
+  #   @profile_client = Instagram.client(access_token: current_user.token)
+  # end
 
   def popular
     @posts = current_user.client.media_popular

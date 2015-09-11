@@ -30,7 +30,7 @@
                 <%= form_tag("/search", method: "get") do%>
                     <%= label_tag :search, "" %>
                     <%= text_field_tag :search, nil, class: 'form-control', placeholder: 'search tags' %>
-                    <%= submit_tag "", class: 'hidden', method: "get" %>
+                    <%= submit_tag "", class: 'hidden', method: "get", value: "search-tags" %>
                 <% end %>
               </div>
         <% end %>
