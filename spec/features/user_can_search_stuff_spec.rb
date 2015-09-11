@@ -48,6 +48,5 @@ RSpec.describe "User can search stuff", type: :feature do
       end
     end
 
-
   end
 end

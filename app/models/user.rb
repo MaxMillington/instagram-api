@@ -19,8 +19,4 @@ class User < ActiveRecord::Base
     @client = Instagram.client(access_token: token)
   end
 
-  def client_user
-    client.user
-  end
-
 end
