@@ -1,0 +1,25 @@
+<br><br><br>
+
+<div class="row">
+  <div class="user-search col-sm-6 col-sm-offset-3">
+    <% @users.each do |user| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-sm-2">
+                <%= image_tag user.profile_picture,
+                              class: "img-responsive img-circle",
+                              alt: "#{user.username} image" %>
+              </div>
+              <div class="col-sm-8">
+                <h5 class="text-left">
+                  <%= link_to user.username,
+                              "https://instagram.com/#{user.username}" %></h5>
+                <p> <%= user.full_name %> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

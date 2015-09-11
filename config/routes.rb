@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get  '/dashboard', to: 'dashboard#show'
   get 'dashboard/feed', to: 'dashboard#index'
   get 'dashboard/popular', to: 'dashboard#popular'
-  get '/search', to: "dashboard#search"
+  get '/user-search', to: 'dashboard#user_search'
+  get '/search', to: 'dashboard#search'
   get '/profile', to: 'profile#show'
   root 'home#show'
 end

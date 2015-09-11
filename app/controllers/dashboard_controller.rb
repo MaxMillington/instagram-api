@@ -3,11 +3,6 @@ class DashboardController < ApplicationController
   def index
   end
 
-  # def show
-  #   @id = params[:id]
-  #   @profile_client = Instagram.client(access_token: current_user.token)
-  # end
-
   def popular
     @posts = current_user.client.media_popular
   end
@@ -22,6 +17,19 @@ class DashboardController < ApplicationController
         redirect_to profile_path
       else
         @posts = current_client.tag_recent_media(tags[0].name)
+      end
+    end
+  end
+
+  def user_search
+    if params[:search] == ''
+      redirect_to profile_path
+    elsif
+    users = current_client.user_search(params[:search])
+      if users[0].nil?
+        redirect_to profile_path
+      else
+        @users = users
       end
     end
   end

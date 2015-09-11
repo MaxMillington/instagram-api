@@ -1,0 +1,9 @@
+<% if current_user %>
+    <div class="form-group ">
+      <%= form_tag("/user-search", method: "get") do%>
+          <%= label_tag :search, "" %>
+          <%= text_field_tag :search, nil, class: 'form-control', placeholder: 'search users' %>
+          <%= submit_tag "", class: 'hidden', method: "get", value: "search-users" %>
+      <% end %>
+    </div>
+<% end %>
